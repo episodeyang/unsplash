@@ -1,5 +1,7 @@
 # Unsplash downloader
 
+[Joseph's blog post on this project](https://josephg.com/blog/shiny-background-images/)
+
 This is a simple thrown together library to periodically download unsplash
 images into a wallpapers directory. You can then tell macos to cycle through
 the directory, using them as wallpaper images.
