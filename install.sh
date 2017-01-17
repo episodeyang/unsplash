@@ -6,3 +6,5 @@ cp unsplash.plist ~/Library/LaunchAgents/
 # unload and then reload
 launchctl unload ~/Library/LaunchAgents/unsplash.plist
 launchctl load ~/Library/LaunchAgents/unsplash.plist
+
+unsplash-get
