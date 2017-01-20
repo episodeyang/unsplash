@@ -54,16 +54,29 @@ const get = (url) => {
 };
 
 // Categories: buildings food nature people technology objects
-const res = '2560x1440';
 [
-    '/user/nasa',
-    '/user/nasa',
-    '/user/nasa',
-    '/user/nasa',
-    '/user/nasa',
-    '/user/nasa',
-    '/user/nasa',
-    '/user/nasa',
-    '/user/nasa',
-    '/user/nasa'
-].map(query => get(`https://source.unsplash.com${query}/featured/${res}`));
+    {username: 'nasa'},
+    {query: "nature"},
+    {query: "space"},
+    {query: "animal"},
+    // {collection: 133},
+    // {collection: 131},
+    // {collection: 201},
+    {collection: 345758},
+    {collection: 418577}
+
+].map(entry => {
+    if (entry.collection) {
+        get(
+            `https://source.unsplash.com/collection/${entry.collection}/2560x1440`
+        )
+    } else if (entry.username) {
+        get(
+            `https://source.unsplash.com/user/${entry.username}/2560x1440`
+        )
+    } else if (entry.query) {
+        get(
+            `https://source.unsplash.com/featured/2560x1440/?${entry.query}`
+        )
+    }
+});
